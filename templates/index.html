@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>Mushroom Classification</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/stylee.css') }}">
+        
+
+        <style>
+
+           .form-container {
+            width: 100%;
+            height: 100%;
+           
+            background-image: url("{{ url_for('static', filename='images/Mush.jpg') }}"); /* Set the background image */
+                               /* Combine image and gradient */
+            background-repeat: no-repeat;
+           /* Positions the background image at the center */
+           
+           background-position: center;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            animation: glowing 2s infinite;   
+        }
+        .centered-form::after {
+        background-image: url("{{ url_for('static', filename='images/R.png') }}");
+        content: ""; /* Add content to the pseudo-element */
+     /* Specify the path to your s
+     ticker image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: bottom right, center; /* Position the image at the bottom right corner */  /*300% */
+    position: absolute; /* Set position to absolute */
+    background-size: contain; 
+    width: 200px; /* Set the width of the sticker image */
+    height: 200px; /* Set the height of the sticker image */
+    bottom: 0;
+    right: -10%; /* Align the right of the image to the right of the container with some padding */
+     /* Add a shadow effect to the sticker */
+     animation: fadeIn 1s ease forwards; /* Apply the animation */
+    pointer-events: none;
+     
+    }
+
+    @keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% {
+        opacity: 1; /* Fade in to full opacity */
+    }
+}
+    @keyframes glowing {
+    0% { box-shadow: 0 0 10px rgba(106, 1, 133, 0.9); }
+    50% { box-shadow: 0 0 50px rgba(106, 1, 133, 0.9); }
+    100% { box-shadow: 0 0 50px rgba(106, 1, 133, 0.9); }
+}
+
+
+        
+        #result {
+            font-size: 20px;
+            text-align: center;
+            
+            top: 50%; /* Align the top of the form to the vertical center */
+    left: 50%; /* Align the left of the form to the horizontal center */
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    margin-left:    28%; /* Set the left margin to 50% */
+    margin-right: 28%;
+    
+        }
+        
+       
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="form-container">
+            
+                
+           
+        <form action='/predict' method="POST" class="centered-form" >
+    
+            <label for="bruises">Bruises:</label>
+
+            <select type='text' name='bruises' id="bruises" required>
+                <option value="0">Select </option>
+                <option value="1"> no bruises</option>
+                <option value="2"> bruises </option>
+
+                </select>
+    
+            <label for="gill_spacing">Gill Spacing:</label>
+            <select type='text' name='gill_spacing' id="gill_spacing" required>
+                <option value="0">Select </option>
+                <option value="1"> close </option>
+                <option value="2"> crowded </option>
+
+                </select>
+    
+            <label for="gill_size">Gill Size:</label>
+            <select type='text' name='gill_size' id="gill_size" required>
+              
+                <option value="0">Select </option>
+                <option value="1"> broad </option>
+                <option value="2"> narrow </option>
+
+                </select>
+    
+            <label for="gill_color">Gill Color:</label>
+            <select type='text' name='gill_color' id="gill_color" required>
+                <option value="0">Select </option>
+                <option value="1"> buff </option>
+                <option value="2"> red </option>
+                <option value="3">gray </option>
+                <option value="4"> chocolate </option>
+                <option value="5"> black </option>
+                <option value="6">brown </option>
+                <option value="7"> orange </option>
+                <option value="8"> pink </option>
+                <option value="9">green </option>
+                <option value="10"> purple </option>
+                <option value="11"> white </option>
+                <option value="12"> yellow </option>
+
+                </select>
+
+            <label for="ring_type">Ring Type:</label>
+            <select type='text' name='ring_type' id="ring_type" required>
+                <option value="0">Select </option>
+                <option value="1"> evanescent </option>
+                <option value="2"> flaring </option>
+                <option value="3"> large </option>
+                <option value="4"> none </option>
+                <option value="5"> pendant</option>
+                
+                </select>
+    
+            <label class="resultt">Class:</label>
+            <span id="result">{{result}}</span><br>
+
+                <input class="submit" type="submit" value="predict">
+    
+        </form>
+  
+    </div>
+    
+    
+    </body>
+</html>

@@ -1,0 +1,91 @@
+
+.centered-form {
+    width: 510px; /* Set the width of the form */
+    height:504px; /* Center the form horizontally */
+    font-size: 20px;
+    font-weight: bolder;
+    
+    background-color: rgba(255, 255, 255, 0.6); /* White background with 60% opacity */
+    
+     /* Stack the form items vertically */
+    justify-content: center;
+   
+    padding: 8px; /* Add padding */
+    border-radius: 40px; /* Add border radius */
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Align the top of the form to the vertical center */
+    left: 50%; /* Align the left of the form to the horizontal center */
+    transform: translate(-50%,-50%); /* Center the form */
+    text-shadow: -1px -1px 0 #fdfdfd,  
+    1px -1px 0 #fdfdfd,
+    -1px 1px 0 #fdfdfd,
+    1px 1px 0 #fdfdfd; 
+
+    animation: glowing 2s infinite;  
+}
+
+
+.centered-form label {
+
+    display: inline-block; /* Make labels appear on the same line */
+    width: 120px; /* Set the width of the labels */
+    text-align: center; /* Align label text to the left */
+    border-radius: 5px;
+    margin-left: auto; /* Center horizontally by setting left margin to auto */
+    margin-right: auto;
+    margin-bottom: 10px; /* Add space between labels and inputs */
+    display: block; /        
+}
+
+.centered-form select[type="text"], .centered-form input[type="submit"] {
+    width: 130px; /* Set the width of the input fields and submit button */
+    margin-bottom: center; /* Add some space between elements */
+    padding: 9px;
+    border: none; /* Remove default border */
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.6); /* White background with 60% opacity */
+    margin: 10px auto; 
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: 50%;
+    margin-left:    37%; /* Set the left margin to 50% */
+    margin-right: 37%;
+    font-size: 13px;
+    font-weight: bolder;
+    
+}
+
+
+.submit{
+    position: relative;
+    display: inline-block;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    background: #fdfdfd;
+    color: rgb(53, 4, 63);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid rgb(243, 5, 231);
+    padding: 10px 30px;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 1s, box-shadow 1s;
+}
+    
+.submit:first-child:hover{
+
+    
+    background:linear-gradient(90deg,#03a9f4,#340391,#c953bf,#076896) ;
+    background-size: 400%;
+
+}
+.submit:last-child:hover{
+
+    
+    background:linear-gradient(90deg,#fa7199,#76037a,#3e1f6e,#eb80a0) ;
+    background-size: 400%;
+
+}
+
+
+
