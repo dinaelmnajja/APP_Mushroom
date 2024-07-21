@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 
 app = Flask(__name__,static_url_path='/static')
-model = pickle.load(open('C:/Users/VIET/Desktop/APP_Mushroom/model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
